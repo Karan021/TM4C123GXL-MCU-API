@@ -292,7 +292,7 @@ void gpio_write_pin(gpio_port_t *p_gpio_x, uint8_t pin_number, bool value)
 
     if (value == ENABLE)
     {
-        p_gpio_x->DATA &= ~(1 << pin_number);
+        //p_gpio_x->DATA &= ~(1 << pin_number); /*!< WARNING : Momentarily becomes zero >*/
         p_gpio_x->DATA |= (1 << pin_number);   /*!< Set bit of the corresponding Pin Number   */
     }
     else if (value == DISABLE)
