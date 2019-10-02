@@ -137,13 +137,13 @@ typedef enum uart_flags
 
 typedef struct uart_periph_config
 {
-   uint32_t            uart_baudrate;      /*!< UART set data Baudrate                      */
-   uart_word_length_t  word_length;        /*!< UART set data word length                   */
-   uart_fifo_t         uart_fifo;          /*!< UART FIFO selection, enable or disable FIFO */
-   uart_stop_bits_t    stop_bits;          /*!< UART set stop bits, 1 Stop or 2 Stop bits   */
-   uart_parity_t       uart_parity;        /*!< UART set parity bits                        */
-   uart_clock_source_t uart_clock_source;  /*!< UART set clock source, Main or PISOC        */
-   uart_direction_t    uart_direction;     /*!< UART direction, TXRX, TX, RX or Loopback    */
+   uint32_t            uart_baudrate;      /*!< UART set data Baudrate                                    */
+   uart_word_length_t  word_length;        /*!< UART set data word length                                 */
+   uart_fifo_t         uart_fifo;          /*!< UART FIFO selection, enable or disable FIFO               */
+   uart_stop_bits_t    stop_bits;          /*!< UART set stop bits, 1 Stop or 2 Stop bits                 */
+   uart_parity_t       uart_parity;        /*!< UART set parity bits                                      */
+   uart_clock_source_t uart_clock_source;  /*!< UART set clock source, CLOCK_SYSTEM (Main) or CLOCK_PISOC */
+   uart_direction_t    uart_direction;     /*!< UART direction, TXRX, TX, RX or Loopback                  */
 
    uart_flow_control_t flow_control;       /*!< Currently doesn't support */
 

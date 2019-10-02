@@ -75,7 +75,11 @@ static int8_t uart_clock_enable(uart_periph_t *p_uart_x)
     int8_t   func_retval = 0;        /*!< Return value of the function                   */
 
     /* Check for correct function parameter value */
-    if(p_uart_x == NULL)
+    if(p_uart_x == NULL || p_uart_x != UART0 || p_uart_x != UART1 || p_uart_x != UART2 || p_uart_x != UART3  )
+    {
+        func_retval = -1;
+    }
+    else if(p_uart_x != UART4 || p_uart_x != UART5 || p_uart_x != UART6 || p_uart_x != UART7)
     {
         func_retval = -1;
     }
@@ -352,6 +356,7 @@ int8_t uart_write(uart_periph_t *p_uart_x, const char *buffer, int16_t length)
 
     return func_retval;
 }
+
 
 
 int8_t uart_read(uart_periph_t *p_uart_x, char *buffer, int16_t length)
