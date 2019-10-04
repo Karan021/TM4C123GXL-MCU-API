@@ -64,6 +64,23 @@
 /******************************************************************************/
 
 
+
+static uint8_t uart_check_port_address(uart_periph_t *p_uart_x)
+{
+    uint8_t func_retval = 0;
+
+    if( p_uart_x == UART0 || p_uart_x == UART1 || p_uart_x == UART2 || p_uart_x == UART4 || p_uart_x == UART4 || p_uart_x == UART5 || p_uart_x == UART6 || p_uart_x == UART7 )
+    {
+        func_retval = 0;
+    }
+    else
+    {
+        func_retval = 1;
+    }
+
+    return func_retval;
+}
+
 /*
  * @brief   helper function to enable UART Peripheral Clock (Blocks till peripheral is ready)
  * @param   *p_uart_x : pointer to the GPIO UART structure (gpio_port_t).
@@ -75,11 +92,7 @@ static int8_t uart_clock_enable(uart_periph_t *p_uart_x)
     int8_t   func_retval = 0;        /*!< Return value of the function                   */
 
     /* Check for correct function parameter value */
-    if(p_uart_x == NULL || p_uart_x != UART0 || p_uart_x != UART1 || p_uart_x != UART2 || p_uart_x != UART3  )
-    {
-        func_retval = -1;
-    }
-    else if(p_uart_x != UART4 || p_uart_x != UART5 || p_uart_x != UART6 || p_uart_x != UART7)
+    if(p_uart_x == NULL || uart_check_port_address(p_uart_x))
     {
         func_retval = -1;
     }
