@@ -159,32 +159,57 @@ typedef enum gpio_port_control
     UART7RX_PE0  = PCTL_AF1,  /*!< UART 5 Rx on PE0  */
     UART7TX_P41  = PCTL_AF1,  /*!< UART 5 Tx on PE1  */
 
+    /*
+     * @brief SSI Module 0, 1, 2, and 3 defines
+     */
+
+    SSI0CLK_PA2  = PCTL_AF2,  /*!< SSI 0 Clk on PA2 */
+    SSI0FSS_PA3  = PCTL_AF2,  /*!< SSI 0 Fss on PA3 */
+    SSI0RX_PA4   = PCTL_AF2,  /*!< SSI 0 Rs on PA4  */
+    SSI0TX_PA5   = PCTL_AF2,  /*!< SSI 0 Tx on PA5  */
+    SSI1CLK_PD0  = PCTL_AF2,  /*!< SSI 1 Clk on PD0 */
+    SSI1FSS_PD1  = PCTL_AF2,  /*!< SSI 1 Fss on PD1 */
+    SSI1RX_PD2   = PCTL_AF2,  /*!< SSI 1 Rs on PD2  */
+    SSI1TX_PD3   = PCTL_AF2,  /*!< SSI 1 Tx on PD3  */
+    SSI1CLK_PF2  = PCTL_AF2,  /*!< SSI 1 Clk on PF2 */
+    SSI1FSS_PF3  = PCTL_AF2,  /*!< SSI 1 Fss on PF3 */
+    SSI1RX_PF0   = PCTL_AF2,  /*!< SSI 1 Rs on PF0  */
+    SSI1TX_PF1   = PCTL_AF2,  /*!< SSI 1 Tx on PF1  */
+    SSI2CLK_PB4  = PCTL_AF2,  /*!< SSI 2 Clk on PB0 */
+    SSI2FSS_PB5  = PCTL_AF2,  /*!< SSI 2 Fss on PB1 */
+    SSI2RX_PB6   = PCTL_AF2,  /*!< SSI 2 Rs on PB2  */
+    SSI2TX_PB7   = PCTL_AF2,  /*!< SSI 2 Tx on PB3  */
+    SSI3CLK_PD0  = PCTL_AF1,  /*!< SSI 3 Clk on PD0 */
+    SSI3FSS_PD1  = PCTL_AF1,  /*!< SSI 3 Fss on PD1 */
+    SSI3RX_PD2   = PCTL_AF1,  /*!< SSI 3 Rs on PD2  */
+    SSI3TX_PD3   = PCTL_AF1   /*!< SSI 3 Tx on PD3  */
+
 }gpio_port_control_t;
 
 
-/*
- * @brief SSI Module 0, 1, 2, and 3 defines
- */
-#define SSI0CLK_PA2              PCTL_AF2  /*!< SSI 0 Clk on PA2 */
-#define SSI0FSS_PA3              PCTL_AF2  /*!< SSI 0 Fss on PA3 */
-#define SSI0RX_PA4               PCTL_AF2  /*!< SSI 0 Rs on PA4  */
-#define SSI0TX_PA5               PCTL_AF2  /*!< SSI 0 Tx on PA5  */
-#define SSI1CLK_PD0              PCTL_AF2  /*!< SSI 1 Clk on PD0 */
-#define SSI1FSS_PD1              PCTL_AF2  /*!< SSI 1 Fss on PD1 */
-#define SSI1RX_PD2               PCTL_AF2  /*!< SSI 1 Rs on PD2  */
-#define SSI1TX_PD3               PCTL_AF2  /*!< SSI 1 Tx on PD3  */
-#define SSI1CLK_PF2              PCTL_AF2  /*!< SSI 1 Clk on PF2 */
-#define SSI1FSS_PF3              PCTL_AF2  /*!< SSI 1 Fss on PF3 */
-#define SSI1RX_PF0               PCTL_AF2  /*!< SSI 1 Rs on PF0  */
-#define SSI1TX_PF1               PCTL_AF2  /*!< SSI 1 Tx on PF1  */
-#define SSI2CLK_PB4              PCTL_AF2  /*!< SSI 2 Clk on PB0 */
-#define SSI2FSS_PB5              PCTL_AF2  /*!< SSI 2 Fss on PB1 */
-#define SSI2RX_PB6               PCTL_AF2  /*!< SSI 2 Rs on PB2  */
-#define SSI2TX_PB7               PCTL_AF2  /*!< SSI 2 Tx on PB3  */
-#define SSI3CLK_PD0              PCTL_AF1  /*!< SSI 3 Clk on PD0 */
-#define SSI3FSS_PD1              PCTL_AF1  /*!< SSI 3 Fss on PD1 */
-#define SSI3RX_PD2               PCTL_AF1  /*!< SSI 3 Rs on PD2  */
-#define SSI3TX_PD3               PCTL_AF1  /*!< SSI 3 Tx on PD3  */
+///*
+// * @brief SSI Module 0, 1, 2, and 3 defines
+// */
+//#define SSI0CLK_PA2              PCTL_AF2  /*!< SSI 0 Clk on PA2 */
+//#define SSI0FSS_PA3              PCTL_AF2  /*!< SSI 0 Fss on PA3 */
+//#define SSI0RX_PA4               PCTL_AF2  /*!< SSI 0 Rs on PA4  */
+//#define SSI0TX_PA5               PCTL_AF2  /*!< SSI 0 Tx on PA5  */
+//#define SSI1CLK_PD0              PCTL_AF2  /*!< SSI 1 Clk on PD0 */
+//#define SSI1FSS_PD1              PCTL_AF2  /*!< SSI 1 Fss on PD1 */
+//#define SSI1RX_PD2               PCTL_AF2  /*!< SSI 1 Rs on PD2  */
+//#define SSI1TX_PD3               PCTL_AF2  /*!< SSI 1 Tx on PD3  */
+//#define SSI1CLK_PF2              PCTL_AF2  /*!< SSI 1 Clk on PF2 */
+//#define SSI1FSS_PF3              PCTL_AF2  /*!< SSI 1 Fss on PF3 */
+//#define SSI1RX_PF0               PCTL_AF2  /*!< SSI 1 Rs on PF0  */
+//#define SSI1TX_PF1               PCTL_AF2  /*!< SSI 1 Tx on PF1  */
+//#define SSI2CLK_PB4              PCTL_AF2  /*!< SSI 2 Clk on PB0 */
+//#define SSI2FSS_PB5              PCTL_AF2  /*!< SSI 2 Fss on PB1 */
+//#define SSI2RX_PB6               PCTL_AF2  /*!< SSI 2 Rs on PB2  */
+//#define SSI2TX_PB7               PCTL_AF2  /*!< SSI 2 Tx on PB3  */
+//#define SSI3CLK_PD0              PCTL_AF1  /*!< SSI 3 Clk on PD0 */
+//#define SSI3FSS_PD1              PCTL_AF1  /*!< SSI 3 Fss on PD1 */
+//#define SSI3RX_PD2               PCTL_AF1  /*!< SSI 3 Rs on PD2  */
+//#define SSI3TX_PD3               PCTL_AF1  /*!< SSI 3 Tx on PD3  */
 
 
 
