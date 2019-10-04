@@ -7,6 +7,7 @@
 #include "gpio_tm4c123gh6pm.h"
 #include "uart_tm4c123gh6pm.h"
 #include <string.h>
+#include "tm4c123gh6pm.h"
 
 
 #define MAX_SIZE 40
@@ -25,6 +26,8 @@ void init_clock(void)
 }
 
 
+
+#define UART0_ENABLE  ((uint8_t)0x01UL)
 
 int8_t init_gpio(void)
 {
@@ -255,7 +258,7 @@ int main()
 
     init_gpio();
 
-    gpio_write_pin(GPIOF, 1, ENABLE);
+    gpio_write_pin(GPIOF, 2, ENABLE);
 
     clear_screen();
 
@@ -265,7 +268,7 @@ int main()
     {
         while(gpio_read_pin(GPIOF, 4));
 
-        gpio_write_pin(GPIOF, 1, DISABLE);
+        gpio_write_pin(GPIOF, 2, DISABLE);
         gpio_write_pin(GPIOF, 3, ENABLE);
 
         uart_read(UART0, message, 20);
