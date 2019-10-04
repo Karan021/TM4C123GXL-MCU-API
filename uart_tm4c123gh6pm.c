@@ -64,7 +64,11 @@
 /******************************************************************************/
 
 
-
+/*
+ * @brief   helper function to check UART port address
+ * @param   *p_uart_x : pointer to the UART structure (uart_periph_t).
+ * @retval  int8_t    : error = 1, success = 0
+ */
 static uint8_t uart_check_port_address(uart_periph_t *p_uart_x)
 {
     uint8_t func_retval = 0;
@@ -83,7 +87,7 @@ static uint8_t uart_check_port_address(uart_periph_t *p_uart_x)
 
 /*
  * @brief   helper function to enable UART Peripheral Clock (Blocks till peripheral is ready)
- * @param   *p_uart_x : pointer to the GPIO UART structure (gpio_port_t).
+ * @param   *p_uart_x : pointer to the UART structure (uart_periph_t).
  * @retval  int8_t    : error = -1, success = 0
  */
 static int8_t uart_clock_enable(uart_periph_t *p_uart_x)
@@ -160,6 +164,7 @@ static int8_t uart_clock_enable(uart_periph_t *p_uart_x)
 
     return func_retval;
 }
+
 
 
 static uint16_t get_system_clock_frequency()
