@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- * @file    gpio_tm4c123gh6pm.h, file name will change
+ * @file    uart_tm4c123gh6pm.h, file name will change
  * @author  Aditya Mall,
  * @brief   TM4C123GH6PM Device Peripheral Access Layer Header File.
  *
