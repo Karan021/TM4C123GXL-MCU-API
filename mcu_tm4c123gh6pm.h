@@ -614,7 +614,7 @@ typedef struct ssi_periheral
 } ssi_periph_t;
 
 
-/*TODO uart rsr doc define */
+
 typedef union uart_rsr_ecr
 {
     __I  uint32_t  RSR;            /*!< UART Receive Status/Error Clear                                       */
