@@ -56,6 +56,23 @@
 
 
 
+/* error defines */
+
+typedef enum error_codes
+{
+    UART_PORT_ADDR_ERROR  = -1,
+    UART_FUNC_PARAM_ERROR = -2,
+
+    UART_CLOCK_ENABLE_ERROR = -1,
+    UART_WRITE_ERROR        = -1,
+    UART_READ_ERROR         = -1,
+
+    UART_CHECK_PORT_EXIT_COND  = 0,
+    UART_CHECK_PORT_ERROR_COND = 1
+
+}error_codes_t;
+
+
 
 /******************************************************************************/
 /*                                                                            */
@@ -73,13 +90,14 @@ static uint8_t uart_check_port_address(uart_periph_t *p_uart_x)
 {
     uint8_t func_retval = 0;
 
+    /* If port address is correct proceed to exit condition */
     if( p_uart_x == UART0 || p_uart_x == UART1 || p_uart_x == UART2 || p_uart_x == UART4 || p_uart_x == UART4 || p_uart_x == UART5 || p_uart_x == UART6 || p_uart_x == UART7 )
     {
-        func_retval = 0;
+        func_retval = UART_CHECK_PORT_EXIT_COND;
     }
     else
     {
-        func_retval = 1;
+        func_retval = UART_CHECK_PORT_ERROR_COND;
     }
 
     return func_retval;
@@ -98,7 +116,7 @@ static int8_t uart_clock_enable(uart_periph_t *p_uart_x)
     /* Check for correct function parameter value */
     if(p_uart_x == NULL || uart_check_port_address(p_uart_x))
     {
-        func_retval = -1;
+        func_retval = UART_PORT_ADDR_ERROR;
     }
     else
     {
@@ -360,9 +378,9 @@ int8_t uart_write(uart_periph_t *p_uart_x, const char *buffer, int16_t length)
     int func_retval  = 0;
 
     /* error check function parameters */
-    if(length == -1 || buffer == NULL)
+    if(length <= 0 || buffer == NULL)
     {
-        func_retval = length;
+        func_retval = UART_WRITE_ERROR;
     }
     else
     {
@@ -383,9 +401,9 @@ int8_t uart_read(uart_periph_t *p_uart_x, char *buffer, int16_t length)
     int func_retval  = 0;
 
     /* error check function parameters */
-    if(length == -1 || buffer == NULL)
+    if(length <= 0 || buffer == NULL)
     {
-        func_retval = length;
+        func_retval = UART_READ_ERROR;
     }
     else
     {
